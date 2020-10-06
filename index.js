@@ -12,7 +12,14 @@ var server = http.createServer(function(req, res)
         {
             res.write('world created');
         }
-
+        if(req.method == 'PUT' && req.url == '/hello')
+        {
+            res.write('world updated');
+        }
+        if(req.method == 'DELETE' && req.url == '/hello')
+        {
+            res.write('world deleted');
+        }
         res.end();
     }
 );
